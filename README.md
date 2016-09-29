@@ -150,11 +150,11 @@ The music shop app is designed to allow user's to not only view various `Music S
 
 3. Once you have succesfully logged in you will be redirected to the main page with a *list* of `Music Shop's`.
 
-4. Now that you have logged in an `Add Music Shop` button will appear at the top of the page, if you wish to add a `Music Shop` to the list please do so.
+4. Now that you have logged in a `Add Music Shop` button will appear at the top of the page, if you wish to add a `Music Shop` to the list please do so.
 
 5. You can *only* `add`, `edit` or `delete` `instruments` to the `Music Shop's` which you have created.
 
-6. Once you are finished addind `Music Shop's` and `Instruments` please don't forget to click on `log out` in the top right hand corner.
+6. Once you are finished adding `Music Shop's` and `Instruments` please don't forget to click on `log out` in the top right hand corner.
 
 #Stop the server
 
