@@ -1,0 +1,203 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+    <div class="row divider green">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row banner menu">
+        <div class="col-md-11 col-md-offset-1 padding-none">
+            <h1>{{ music_shop.name }}
+            <figure class="creator">
+                <img src='{{ creator.picture}}'>
+                <figcaption>{{creator.name}}</figcaption>
+            </figure>
+            </h1>
+        </div>
+    </div>
+<div class = 'flash'>
+              {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+    <div class="row padding-top padding-bottom">
+        <div class="col-md-1"></div>
+        <div class="col-md-11 padding-none">
+            <a href="{{url_for('editMusicShop', music_shop_id = music_shop.id )}}">
+                <button class="btn btn-default" id="new-stock-item">
+                    <span class="glyphicon glyphicon-music" aria-hidden="true"></span>Edit Music Shop
+                </button>
+            </a>
+            <a href="{{url_for('newStockItem', music_shop_id = music_shop.id )}}">
+                <button class="btn btn-default" id="new-stock-item">
+                    <span class="glyphicon glyphicon-music" aria-hidden="true"></span>Add Stock Item
+                </button>
+            </a>
+                        <a href="{{url_for('deleteMusicShop', music_shop_id = music_shop.id )}}">
+                <button class="btn btn-default delete" id="delete-music_shop">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete Music Shop
+                </button>
+            </a>
+        </div>
+        <div class="col-md-7"></div>
+    </div>
+
+    {% if items !=[] %}
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <h2>Electric Guitar</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'electric Guitar' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                                <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                                <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Bass Guitar</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Bass Guitar' %}
+                        <div class="stock-item">
+                            <h3>{{i.name}}</h3>
+                            <p>{{i.description}}</p>
+                            <p class="stock-price">{{i.price}}</p>
+                            <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                            <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Acoustic Guitars</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Acoustic Guitars' %}
+                        <div class="stock-item">
+                            <h3>{{i.name}}</h3>
+                            <p>{{i.description}}</p>
+                            <p class="stock-price">{{i.price}}</p>
+                            <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                            <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Percussion</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Percussion' %}
+                        <div class="stock-item">
+                            <h3>{{i.name}}</h3>
+                            <p>{{i.description}}</p>
+                            <p class="stock-price">{{i.price}}</p>
+                            <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                            <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    <h2>Acoustic Bass</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Acoustic Bass' %}
+                        <div class="stock-item">
+                            <h3>{{i.name}}</h3>
+                            <p>{{i.description}}</p>
+                            <p class="stock-price">{{i.price}}</p>
+                            <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                            <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    <h2>Electric Piano</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Electric Piano' %}
+                        <div class="stock-item">
+                            <h3>{{i.name}}</h3>
+                            <p>{{i.description}}</p>
+                            <p class="stock-price">{{i.price}}</p>
+                            <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                            <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    <h2>Electric Drum Kits</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Electric Drum Kits' %}
+                        <div class="stock-item">
+                            <h3>{{i.name}}</h3>
+                            <p>{{i.description}}</p>
+                            <p class="stock-price">{{i.price}}</p>
+                            <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                            <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    <h2>Drum</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Drum' %}
+                        <div class="stock-item">
+                            <h3>{{i.name}}</h3>
+                            <p>{{i.description}}</p>
+                            <p class="stock-price">{{i.price}}</p>
+                            <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                            <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    <h2>Drum Hardware</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Drum Hardware' %}
+                        <div class="stock-item">
+                            <h3>{{i.name}}</h3>
+                            <p>{{i.description}}</p>
+                            <p class="stock-price">{{i.price}}</p>
+                            <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                            <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    <h2>Drum Sticks</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Drum Sticks' %}
+                        <div class="stock-item">
+                            <h3>{{i.name}}</h3>
+                            <p>{{i.description}}</p>
+                            <p class="stock-price">{{i.price}}</p>
+                            <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                            <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    <h2>Digital Piano</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Digital Piano' %}
+                        <div class="stock-item">
+                            <h3>{{i.name}}</h3>
+                            <p>{{i.description}}</p>
+                            <p class="stock-price">{{i.price}}</p>
+                            <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                            <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    <h2>Strings</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Strings' %}
+                        <div class="stock-item">
+                            <h3>{{i.name}}</h3>
+                            <p>{{i.description}}</p>
+                            <p class="stock-price">{{i.price}}</p>
+                            <a href='{{url_for('editStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Edit</a> |
+                            <a href='{{url_for('deleteStockItem', music_shop_id = music_shop.id, stock_id=i.id ) }}'>Delete</a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    {% endif %}
+{% endblock %}

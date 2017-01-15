@@ -1,0 +1,163 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+    <div class="row divider green">
+        <div class="col-md-12"></div>
+    <div class="row banner menu">
+        <div class="col-md-11 col-md-offset-1 padding-none">
+            <h1>{{ music_shop.name }}
+            <figure class="creator">
+                <img src="{{ creator.picture}}">
+                <figcaption>{{ creator.name }}</figcaption>
+            </figure>
+            </h1>
+        </div>
+    </div>
+    <div class="row padding-top padding-bottom">
+        <div class="col-md-1"></div>
+        <div class="col-md-11 padding-none">
+        </div>
+        <div class="col-md-7"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                             <li> <strong> {{ message }} </strong> </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+    {% if items !=[] %}
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <h2>Electric Guitar</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Electric Guitar' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Bass Guitar</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Bass Guitar' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Acoustic Guitars</h2>
+                    {% for i in items %}
+                        {% if i.insturment == 'Acoustic Guitars' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Percussion</h2>
+                    {% for i in items %}
+                        {% if i.instrument == 'Percussion' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Acoustic Bass</h2>
+                    {% for i in items %}
+                        {% if i.insturment == 'Acoustic Bass' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Electric Piano</h2>
+                    {% for i in items %}
+                        {% if i.insturment == 'Electric Piano' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Electric Drum Kits</h2>
+                    {% for i in items %}
+                        {% if i.insturment == 'Electric Drum Kits' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Drum</h2>
+                    {% for i in items %}
+                        {% if i.insturment == 'Drum' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Drum Hardware</h2>
+                    {% for i in items %}
+                        {% if i.insturment == 'Drum Hardware' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Drum Sticks</h2>
+                    {% for i in items %}
+                        {% if i.insturment == 'Drum Sticks' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Digital Piano</h2>
+                    {% for i in items %}
+                        {% if i.insturment == 'Digital Piano' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                <h2>Strings</h2>
+                    {% for i in items %}
+                        {% if i.insturment == 'Strings' %}
+                            <div class="stock-item">
+                                <h3>{{i.name}}</h3>
+                                <p>{{i.description}}</p>
+                                <p class="stock-price">{{i.price}}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    {% endif %}
+{% endblock %}
